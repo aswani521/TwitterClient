@@ -7,6 +7,7 @@
 //
 
 #import "TwitterClient.h"
+#import "Tweet.h"
 NSString * const kTwitterConsumerKey = @"z7OtqPXe0m1AZ7FLmZv6GqmBc";
 NSString * const kTwitterConsumerSecret = @"DyhphHGF1tbIQd72c9oYhyBdjEHdWappVZJ4Nb6HKm4xDkgGC1";
 NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
@@ -60,7 +61,9 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
             //            NSLog(@"current user: %@", responseObject);
             User *user = [[User alloc] initWithDictionary:responseObject];
             NSLog(@"current user: %@", user.name);
+            [User setCurrentUser:user];
             self.loginCompletion(user, nil);
+            
         } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
             NSLog(@"failed to get current user");
             self.loginCompletion(nil, error);
@@ -82,5 +85,15 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
     }];
 
 
+}
+
+
+- (void) homeTimelineWithParams:(NSDictionary *) params completion:(void (^)(NSArray *tweets, NSError *error)) completion{
+    [self GET:@"1.1/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSArray *tweets = [Tweet tweetsWithArray:responseObject];
+        completion(tweets, nil);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
 }
 @end
