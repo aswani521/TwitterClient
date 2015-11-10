@@ -18,7 +18,7 @@ Project Requirements
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://raw.githubusercontent.com/aswani521/ios_yelp-master/master/Yelp_Demo.gif' title='Yelp Video Walkthrough' width='' alt='Yelp Video Walkthrough' />
+<img src='https://github.com/aswani521/TwitterClient/blob/master/Twitter-1-Demo.gif' title='Twitter Video Walkthrough' width='' alt='Twitter Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
