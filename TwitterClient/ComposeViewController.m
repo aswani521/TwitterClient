@@ -27,6 +27,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(onSend)];
     [self setUserDetails];
     [self.textView becomeFirstResponder];
+    
+    if(!self.tweet) {
+        self.tweet = [[Tweet alloc]init];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
