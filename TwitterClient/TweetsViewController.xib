@@ -13,20 +13,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzF-X5-6lt">
-                    <rect key="frame" x="276" y="285" width="48" height="30"/>
-                    <state key="normal" title="Logout"/>
-                    <connections>
-                        <action selector="onLogout:" destination="-1" eventType="touchUpInside" id="EgQ-4j-wQe"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="lzF-X5-6lt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="juE-XM-hf8"/>
-                <constraint firstItem="lzF-X5-6lt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kP6-Y1-Hse"/>
-            </constraints>
         </view>
     </objects>
 </document>

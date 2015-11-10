@@ -22,7 +22,12 @@
             NSLog(@"Welcome to %@", user.name);
             
 //            [User currentUser];
-            [self presentViewController:[[TweetsViewController alloc]init] animated:YES completion:nil];
+            
+            
+            TweetsViewController *tvc = [[TweetsViewController alloc]init];
+            UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:tvc];
+            [self presentViewController:nvc animated:YES completion:nil];
+
             
         } else{
             // present error view

@@ -20,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //Add bar button items: "Search" on the right and "Cancel" on the left
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onUserLogout)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:nil];
+    
+    
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
         for(Tweet *tweet in tweets){
             NSLog(@"text %@", tweet.text);
@@ -42,8 +48,10 @@
 }
 */
 
-- (IBAction)onLogout:(id)sender {
+- (void) onUserLogout{
+    [self dismissViewControllerAnimated:YES completion:nil];
     [User logout];
 
 }
+
 @end
