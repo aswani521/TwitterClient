@@ -8,6 +8,7 @@
 
 #import "TweetsViewController.h"
 #import "TweetCellTableViewCell.h"
+#import "TweetDetailsViewController.h"
 #import "User.h"
 #import "Tweet.h"
 #import "TwitterClient.h"
@@ -67,6 +68,16 @@
     cell.tweet = self.tweets[indexPath.row];
     [cell setTweetCell:self.tweets[indexPath.row]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Get destination view
+    NSLog(@"Row selected: %ld",indexPath.row);
+    TweetDetailsViewController *vc = [[TweetDetailsViewController alloc]init];
+    vc.tweet = self.tweets[indexPath.row];
+    //[vc setTweetDetails:self.tweets[indexPath.row]];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [[self navigationController]pushViewController:vc animated:YES];
 }
 
 /*

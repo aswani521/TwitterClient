@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetDetailsViewController">
+            <connections>
+                <outlet property="nameLabel" destination="xoO-O4-aiG" id="qh2-wV-yFZ"/>
+                <outlet property="profileImage" destination="ezc-nU-m1l" id="hpq-C6-f2o"/>
+                <outlet property="screenNameLabel" destination="0yZ-AI-yZG" id="Ti8-eN-7ex"/>
+                <outlet property="tweetTextLabel" destination="bAR-qA-wbI" id="u7W-P1-LFO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-nU-m1l">
+                    <rect key="frame" x="13" y="10" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="71r-o5-u60"/>
+                        <constraint firstAttribute="width" constant="80" id="wjX-Zr-qhp"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael is a Moron" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoO-O4-aiG">
+                    <rect key="frame" x="101" y="10" width="136" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAR-qA-wbI">
+                    <rect key="frame" x="13" y="95" width="294" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="LqU-BR-gTT"/>
+                        <constraint firstAttribute="width" constant="294" id="bSd-YZ-oO9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TheMichaelMoron" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yZ-AI-yZG">
+                    <rect key="frame" x="101" y="34" width="120" height="16"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0yZ-AI-yZG" firstAttribute="leading" secondItem="ezc-nU-m1l" secondAttribute="trailing" constant="8" id="2Mb-Qt-P11"/>
+                <constraint firstItem="xoO-O4-aiG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="32v-rM-UjE"/>
+                <constraint firstItem="0yZ-AI-yZG" firstAttribute="top" secondItem="xoO-O4-aiG" secondAttribute="bottom" constant="6" id="AIN-86-Xlw"/>
+                <constraint firstItem="bAR-qA-wbI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="Dn5-Ki-dIc"/>
+                <constraint firstItem="ezc-nU-m1l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="IGJ-6X-kgj"/>
+                <constraint firstItem="ezc-nU-m1l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="YYB-89-z6a"/>
+                <constraint firstItem="bAR-qA-wbI" firstAttribute="top" secondItem="ezc-nU-m1l" secondAttribute="bottom" constant="5" id="g11-s3-Qrg"/>
+                <constraint firstItem="xoO-O4-aiG" firstAttribute="leading" secondItem="ezc-nU-m1l" secondAttribute="trailing" constant="8" id="loh-hb-Cc0"/>
+            </constraints>
+            <point key="canvasLocation" x="270" y="289"/>
+        </view>
+    </objects>
+</document>

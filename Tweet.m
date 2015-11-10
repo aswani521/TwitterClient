@@ -14,6 +14,8 @@
     self = [super init];
     if (self) {
         self.user = [[User alloc] initWithDictionary:dictionary[@"user"]];
+        self.selectedUserRetweet = dictionary[@"current_user_retweet"];
+        
         self.text = dictionary[@"text"];
         NSString *createAtString = dictionary[@"created_at"];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
