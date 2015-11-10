@@ -18,6 +18,8 @@
 		AD7A83011BF06578004D054F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7A83001BF06578004D054F /* User.m */; settings = {ASSET_TAGS = (); }; };
 		AD7A83051BF09A14004D054F /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7A83031BF09A14004D054F /* TweetsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AD7A83061BF09A14004D054F /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7A83041BF09A14004D054F /* TweetsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		AD7A830A1BF19831004D054F /* TweetCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7A83081BF19831004D054F /* TweetCellTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		AD7A830B1BF19831004D054F /* TweetCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7A83091BF19831004D054F /* TweetCellTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		FFED4C4C268BAF29200C2ECB /* libPods-TwitterClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04EB8BFE97F961EFF63D44A /* libPods-TwitterClient.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,9 @@
 		AD7A83021BF09A14004D054F /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
 		AD7A83031BF09A14004D054F /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		AD7A83041BF09A14004D054F /* TweetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetsViewController.xib; sourceTree = "<group>"; };
+		AD7A83071BF19831004D054F /* TweetCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TweetCellTableViewCell.h; path = TwitterClient/TweetCellTableViewCell.h; sourceTree = "<group>"; };
+		AD7A83081BF19831004D054F /* TweetCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TweetCellTableViewCell.m; path = TwitterClient/TweetCellTableViewCell.m; sourceTree = "<group>"; };
+		AD7A83091BF19831004D054F /* TweetCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TweetCellTableViewCell.xib; path = TwitterClient/TweetCellTableViewCell.xib; sourceTree = "<group>"; };
 		BC5908427CBA28F84FC95AD4 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		C04EB8BFE97F961EFF63D44A /* libPods-TwitterClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwitterClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +83,7 @@
 		AD7A82D01BED955C004D054F = {
 			isa = PBXGroup;
 			children = (
+				AD7A830C1BF1B4DC004D054F /* Views */,
 				AD7A82FB1BF0652E004D054F /* Models */,
 				AD7A82DB1BED955C004D054F /* TwitterClient */,
 				AD7A82DA1BED955C004D054F /* Products */,
@@ -132,6 +138,16 @@
 				AD7A83001BF06578004D054F /* User.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		AD7A830C1BF1B4DC004D054F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD7A83071BF19831004D054F /* TweetCellTableViewCell.h */,
+				AD7A83081BF19831004D054F /* TweetCellTableViewCell.m */,
+				AD7A83091BF19831004D054F /* TweetCellTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +214,7 @@
 				AD7A83061BF09A14004D054F /* TweetsViewController.xib in Resources */,
 				AD7A82EC1BED955C004D054F /* LaunchScreen.storyboard in Resources */,
 				AD7A82E91BED955C004D054F /* Assets.xcassets in Resources */,
+				AD7A830B1BF19831004D054F /* TweetCellTableViewCell.xib in Resources */,
 				AD7A82F71BF00DF3004D054F /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +281,7 @@
 				AD7A82DE1BED955C004D054F /* main.m in Sources */,
 				AD7A82F61BF00DF3004D054F /* LoginViewController.m in Sources */,
 				AD7A83051BF09A14004D054F /* TweetsViewController.m in Sources */,
+				AD7A830A1BF19831004D054F /* TweetCellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

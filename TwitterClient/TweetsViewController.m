@@ -7,12 +7,13 @@
 //
 
 #import "TweetsViewController.h"
+#import "TweetCellTableViewCell.h"
 #import "User.h"
 #import "Tweet.h"
 #import "TwitterClient.h"
 
-@interface TweetsViewController ()
-
+@interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation TweetsViewController
@@ -25,17 +26,47 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onUserLogout)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:nil];
     
+
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self.tableView registerNib: [UINib nibWithNibName:@"TweetCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"tweetCell"];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 400;
+    
+    [self fetchTweets];
+    
+    
+}
+
+- (void)fetchTweets {
     
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
         for(Tweet *tweet in tweets){
             NSLog(@"text %@", tweet.text);
         }
+        self.tweets = tweets;
+        [self.tableView reloadData];
     }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table views
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.tweets.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TweetCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetCell"];
+    cell.tweet = self.tweets[indexPath.row];
+    [cell setTweetCell:self.tweets[indexPath.row]];
+    return cell;
 }
 
 /*

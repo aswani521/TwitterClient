@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TweetsViewController : UIViewController
-- (IBAction)onLogout:(id)sender;
 
+@property (strong,nonatomic) NSArray *tweets;
+- (void)onUserLogout;
 @end

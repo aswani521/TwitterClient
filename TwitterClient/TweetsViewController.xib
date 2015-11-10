@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetsViewController">
             <connections>
+                <outlet property="tableView" destination="Yko-Fn-Te7" id="cUO-Ef-Oul"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +14,19 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-Fn-Te7">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Yko-Fn-Te7" secondAttribute="trailing" id="D3H-Nv-7AE"/>
+                <constraint firstItem="Yko-Fn-Te7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EBI-iz-yd9"/>
+                <constraint firstAttribute="bottom" secondItem="Yko-Fn-Te7" secondAttribute="bottom" id="HoF-K2-2fd"/>
+                <constraint firstItem="Yko-Fn-Te7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rmU-J8-jSn"/>
+            </constraints>
         </view>
     </objects>
 </document>
