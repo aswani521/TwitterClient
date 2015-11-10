@@ -28,8 +28,13 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = @"Tweet";
     [self setTweetDetails];
+    //[self setUpToolBar];
+    
+    //self.navigationController.toolbar i
     // Do any additional setup after loading the view from its nib.
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

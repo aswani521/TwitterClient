@@ -47,19 +47,51 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Like" translatesAutoresizingMaskIntoConstraints="NO" id="HcF-ae-v0h">
+                    <rect key="frame" x="0.0" y="528" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="RuI-E6-9bQ"/>
+                        <constraint firstAttribute="height" constant="40" id="U9s-60-Qxs"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="zYg-D6-lQX">
+                    <rect key="frame" x="280" y="528" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CV7-SJ-Fa4"/>
+                        <constraint firstAttribute="width" constant="40" id="gDk-04-5xH"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reply" translatesAutoresizingMaskIntoConstraints="NO" id="9dQ-f7-6vd">
+                    <rect key="frame" x="140" y="528" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5YT-n8-86t"/>
+                        <constraint firstAttribute="width" constant="40" id="CA8-Tr-9Fe"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="0yZ-AI-yZG" firstAttribute="leading" secondItem="ezc-nU-m1l" secondAttribute="trailing" constant="8" id="2Mb-Qt-P11"/>
                 <constraint firstItem="xoO-O4-aiG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="32v-rM-UjE"/>
                 <constraint firstItem="0yZ-AI-yZG" firstAttribute="top" secondItem="xoO-O4-aiG" secondAttribute="bottom" constant="6" id="AIN-86-Xlw"/>
+                <constraint firstItem="HcF-ae-v0h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bxj-2O-cau"/>
+                <constraint firstAttribute="bottom" secondItem="HcF-ae-v0h" secondAttribute="bottom" id="DPF-fu-RNr"/>
                 <constraint firstItem="bAR-qA-wbI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="Dn5-Ki-dIc"/>
+                <constraint firstAttribute="bottom" secondItem="zYg-D6-lQX" secondAttribute="bottom" id="Hf7-tN-blq"/>
                 <constraint firstItem="ezc-nU-m1l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="IGJ-6X-kgj"/>
+                <constraint firstAttribute="trailing" secondItem="zYg-D6-lQX" secondAttribute="trailing" id="Mzh-Vh-RkE"/>
+                <constraint firstAttribute="bottom" secondItem="9dQ-f7-6vd" secondAttribute="bottom" id="Rkf-YS-tCq"/>
                 <constraint firstItem="ezc-nU-m1l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="YYB-89-z6a"/>
+                <constraint firstItem="9dQ-f7-6vd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z6R-zb-iDs"/>
                 <constraint firstItem="bAR-qA-wbI" firstAttribute="top" secondItem="ezc-nU-m1l" secondAttribute="bottom" constant="5" id="g11-s3-Qrg"/>
                 <constraint firstItem="xoO-O4-aiG" firstAttribute="leading" secondItem="ezc-nU-m1l" secondAttribute="trailing" constant="8" id="loh-hb-Cc0"/>
             </constraints>
             <point key="canvasLocation" x="270" y="289"/>
         </view>
     </objects>
+    <resources>
+        <image name="Like" width="20" height="20"/>
+        <image name="Reply" width="20" height="20"/>
+        <image name="Retweet" width="20" height="20"/>
+    </resources>
 </document>
