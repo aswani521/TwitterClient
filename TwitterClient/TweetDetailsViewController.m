@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.title = @"Tweet";
     [self setTweetDetails];
     // Do any additional setup after loading the view from its nib.
 }

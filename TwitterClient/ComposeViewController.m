@@ -27,6 +27,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(onSend)];
     [self setUserDetails];
     [self.textView becomeFirstResponder];
+    self.title = @"Compose";
     
     if(!self.tweet) {
         self.tweet = [[Tweet alloc]init];
