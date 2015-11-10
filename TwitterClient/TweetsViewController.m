@@ -16,6 +16,7 @@
 
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong,nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation TweetsViewController
@@ -39,8 +40,16 @@
     self.tableView.estimatedRowHeight = 400;
     
     [self fetchTweets];
+    [self setUpRefreshControl];
     
     
+    
+}
+
+- (void) setUpRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)fetchTweets {
@@ -102,6 +111,11 @@
     vc.user = [User currentUser];
     [[self navigationController]pushViewController:vc animated:YES];
     
+}
+
+- (void)onRefresh {
+    [self fetchTweets];
+    [self.refreshControl endRefreshing];
 }
 
 @end
