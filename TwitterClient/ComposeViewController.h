@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "Tweet.h"
 
 @interface ComposeViewController : UIViewController
-
+@property (strong,nonatomic) User *user;
+@property (strong,nonatomic) Tweet *tweet;
 @end

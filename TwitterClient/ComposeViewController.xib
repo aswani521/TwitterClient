@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController">
             <connections>
+                <outlet property="nameLabel" destination="MKq-FN-zjk" id="KCP-LL-VNR"/>
+                <outlet property="profileImage" destination="gKC-ew-GGS" id="rKp-Sa-aGv"/>
+                <outlet property="screenNameLabel" destination="Zfs-VB-Pde" id="0Vy-ti-HbG"/>
+                <outlet property="textView" destination="LgU-Ah-I34" id="iiY-3u-6km"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,11 +18,47 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKC-ew-GGS">
-                    <rect key="frame" x="18" y="42" width="240" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKC-ew-GGS">
+                    <rect key="frame" x="10" y="10" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="5GJ-oK-ciA"/>
+                        <constraint firstAttribute="width" constant="80" id="kvG-no-OO7"/>
+                    </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="michael_user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfs-VB-Pde">
+                    <rect key="frame" x="98" y="34.5" width="214" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-Ah-I34">
+                    <rect key="frame" x="8" y="94" width="304" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="Job-us-8oh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKq-FN-zjk">
+                    <rect key="frame" x="98" y="10" width="59.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="MKq-FN-zjk" firstAttribute="leading" secondItem="gKC-ew-GGS" secondAttribute="trailing" constant="8" id="GYa-4a-JtH"/>
+                <constraint firstItem="gKC-ew-GGS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Xev-Lf-mPa"/>
+                <constraint firstItem="LgU-Ah-I34" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="YPt-wS-m6I"/>
+                <constraint firstItem="gKC-ew-GGS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="YTh-19-F3x"/>
+                <constraint firstAttribute="trailing" secondItem="Zfs-VB-Pde" secondAttribute="trailing" constant="8" id="aAI-Pm-fgU"/>
+                <constraint firstItem="LgU-Ah-I34" firstAttribute="top" secondItem="gKC-ew-GGS" secondAttribute="bottom" constant="4" id="gKE-69-Q8r"/>
+                <constraint firstItem="Zfs-VB-Pde" firstAttribute="leading" secondItem="gKC-ew-GGS" secondAttribute="trailing" constant="8" id="jwZ-HH-V9a"/>
+                <constraint firstItem="MKq-FN-zjk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="ljI-MA-bIW"/>
+                <constraint firstAttribute="trailing" secondItem="LgU-Ah-I34" secondAttribute="trailing" constant="8" id="ovg-lG-eke"/>
+                <constraint firstItem="Zfs-VB-Pde" firstAttribute="top" secondItem="MKq-FN-zjk" secondAttribute="bottom" constant="4" id="sz8-JK-6n9"/>
+            </constraints>
             <point key="canvasLocation" x="305" y="223"/>
         </view>
     </objects>

@@ -9,6 +9,7 @@
 #import "TweetsViewController.h"
 #import "TweetCellTableViewCell.h"
 #import "TweetDetailsViewController.h"
+#import "ComposeViewController.h"
 #import "User.h"
 #import "Tweet.h"
 #import "TwitterClient.h"
@@ -25,7 +26,7 @@
     
     //Add bar button items: "Search" on the right and "Cancel" on the left
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onUserLogout)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onCompose)];
     
 
     
@@ -94,6 +95,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     [User logout];
 
+}
+
+- (void) onCompose{
+    ComposeViewController *vc = [[ComposeViewController alloc]init];
+    vc.user = [User currentUser];
+    [[self navigationController]pushViewController:vc animated:YES];
+    
 }
 
 @end

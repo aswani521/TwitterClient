@@ -8,7 +8,14 @@
 
 #import "ComposeViewController.h"
 
+#import "UIImageView+AFNetworking.h"
+#import "TwitterClient.h"
+
 @interface ComposeViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
 
 @end
 
@@ -16,12 +23,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(onSend)];
+    [self setUserDetails];
+    [self.textView becomeFirstResponder];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setUserDetails {
+    
+    
+    self.nameLabel.text = self.user.name;
+    self.screenNameLabel.text = self.user.screenName;
+    [self.profileImage setImageWithURL:[NSURL URLWithString:self.user.profileImageUrl]];
+
+    
+}
+
+- (void)onSend{
+    self.tweet.text = self.textView.text;
+    [[TwitterClient sharedInstance] sendTweet:self.tweet withCompletion:^(Tweet *tweet, NSError *error) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 /*
