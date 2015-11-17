@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "HamburgerViewController.h"
+#import "ProfileViewController.h"
+#import "TweetsViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
@@ -22,7 +25,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[LoginViewController alloc] init];
+    
+    //Present HamburgerViewController if user is already logged in
+    User *user = [User currentUser];
+    if (user != nil) {
+        ProfileViewController *pvc = [[ProfileViewController alloc]init];
+        TweetsViewController *tvc = [[TweetsViewController alloc]init];
+        
+        HamburgerViewController *hvc = [[HamburgerViewController alloc] init];
+        
+        UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:hvc];
+        self.window.rootViewController = nvc;
+    } else {
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    }
     
     [self.window makeKeyAndVisible];
     return YES;

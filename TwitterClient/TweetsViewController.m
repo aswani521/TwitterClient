@@ -17,6 +17,7 @@
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation TweetsViewController
@@ -29,7 +30,6 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onUserLogout)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onCompose)];
     
-
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -53,14 +53,24 @@
 }
 
 - (void)fetchTweets {
+    //if (self.fetchTimeline) {
+        [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+            for(Tweet *tweet in tweets){
+                NSLog(@"text %@", tweet.text);
+            }
+            self.tweets = tweets;
+            [self.tableView reloadData];
+        }];
+    //}else{
+//        [[TwitterClient sharedInstance] mentionsWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+//            for(Tweet *tweet in tweets){
+//                NSLog(@"text %@", tweet.text);
+//            }
+//            self.tweets = tweets;
+//            [self.tableView reloadData];
+//        }];
+//    }
     
-    [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
-        for(Tweet *tweet in tweets){
-            NSLog(@"text %@", tweet.text);
-        }
-        self.tweets = tweets;
-        [self.tableView reloadData];
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

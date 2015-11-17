@@ -12,4 +12,5 @@
 
 @property (strong,nonatomic) NSArray *tweets;
 - (void)onUserLogout;
+@property (nonatomic) BOOL fetchTimeline;
 @end
