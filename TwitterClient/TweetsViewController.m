@@ -28,9 +28,6 @@
     //Add bar button items: "Search" on the right and "Cancel" on the left
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onUserLogout)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onCompose)];
-    
-
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -53,6 +50,15 @@
 }
 
 - (void)fetchTweets {
+//    if (self.fetchHomeTimeline == NO) { // mentions Timeline
+//        [[TwitterClient sharedInstance] mentionsTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+//            for(Tweet *tweet in tweets){
+//                NSLog(@"text %@", tweet.text);
+//            }
+//            self.tweets = tweets;
+//            [self.tableView reloadData];
+//        }];
+//    }else {
     
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
         for(Tweet *tweet in tweets){
@@ -61,6 +67,7 @@
         self.tweets = tweets;
         [self.tableView reloadData];
     }];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HamburgerViewController">
+            <connections>
+                <outlet property="contentView" destination="DRM-iF-wun" id="VfJ-Du-tLh"/>
+                <outlet property="leftMarginConstraint" destination="euT-M4-z0U" id="JKh-8W-bT8"/>
+                <outlet property="menuView" destination="RO4-ZH-Xb5" id="gBB-hp-vGx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RO4-ZH-Xb5" userLabel="MenuView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRM-iF-wun" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="MeL-I7-rPs" appends="YES" id="Xtc-i1-8Sk"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RO4-ZH-Xb5" secondAttribute="trailing" id="4VU-pJ-vKi"/>
+                <constraint firstItem="DRM-iF-wun" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5aN-pT-efG"/>
+                <constraint firstAttribute="bottom" secondItem="RO4-ZH-Xb5" secondAttribute="bottom" id="IWu-vu-1qb"/>
+                <constraint firstAttribute="bottom" secondItem="DRM-iF-wun" secondAttribute="bottom" id="WMR-t0-zEh"/>
+                <constraint firstItem="DRM-iF-wun" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="euT-M4-z0U"/>
+                <constraint firstItem="DRM-iF-wun" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="gRX-H4-e5O"/>
+                <constraint firstItem="RO4-ZH-Xb5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n8P-7E-tZ1"/>
+                <constraint firstItem="RO4-ZH-Xb5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xil-bN-yom"/>
+            </constraints>
+            <point key="canvasLocation" x="308" y="311"/>
+        </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IX0-Ck-qVx">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+            <nil key="highlightedColor"/>
+        </label>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="MeL-I7-rPs">
+            <connections>
+                <action selector="onPan:" destination="-1" id="RO3-5W-1fL"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+</document>

@@ -11,5 +11,6 @@
 @interface TweetsViewController : UIViewController
 
 @property (strong,nonatomic) NSArray *tweets;
+@property (nonatomic) BOOL fetchHomeTimeline;
 - (void)onUserLogout;
 @end
