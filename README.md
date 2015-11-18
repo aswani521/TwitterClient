@@ -1,3 +1,30 @@
+# Week 4 Project: Twitter Redux
+Time spent: **12** hours spent in total
+
+[Y] Hamburger menu
+
+    Dragging anywhere in the view should reveal the menu.
+
+    The menu should include links to your profile, the home timeline, and the mentions view.
+
+[Y] Profile page
+
+    Contains the user header view
+
+    Contains a section with the users basic stats: # tweets, # following, # followers
+
+Home Timeline
+
+    [Y]Tapping on a user image should bring up that user's profile page
+
+## Video Walkthrough
+
+<img src='https://github.com/aswani521/TwitterClient/blob/master/twitter-demo-assignment-4.gif' title='Twitter Video Walkthrough' width='' alt='Twitter Video Walkthrough' />
+
+Issues:
+- ran into issues when trying to use delegates with hamburger. Wasted a lot of time in trying to get this working
+
+
 # Week 3 Project: Simple Twitter Client
 
 Time spent: **12** hours spent in total
